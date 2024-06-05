@@ -23,9 +23,9 @@ const Busqueda = () => {
   };
 
   return (
-<div className="navbar bg-base-100">
+<div className="navbar bg-base-100 mt-8">
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl">Busqueda de Carros</a>
+        <a className="btn btn-ghost text-xl">Renta de Carros</a>
       </div>
       <div className="flex-none gap-2">
         <div className="form-control">

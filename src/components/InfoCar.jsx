@@ -1,32 +1,48 @@
 import React from "react";
 
-const InfoCar = ({ carro, precio, ubicacion }) => {
+const InfoCar = ({ carro, precio, ubicacion, imgCarro }) => {
   return (
     <>
-      <a
-        href="#"
-        class="grid grid-cols-3 p-3 items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl w-80 h-43"
-      >
-        <img
-          class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-          src="https://acroadtrip.blob.core.windows.net/catalogo-imagenes/s/RT_V_67c1989aeb7749bbac626a43e1dc6d42.webp"
-          alt=""
-        />
-        <div class="flex flex-col justify-between p-2 leading-normal">
-        <p class="mb-1 font-light text-gray-700">
-            {ubicacion}
-          </p>
-          <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
-            {carro}
-          </h5>
-          <p class="mb-3 font-normal text-gray-700">
-            {precio}
-          </p>
+      <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <a href="#">
+          <img class="p-8 rounded-t-lg" src={imgCarro} alt="product image" />
+        </a>
+        <div class="px-5 pb-5">
+          <a href="#">
+            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+              {carro}
+            </h5>
+          </a>
+          <div class="flex items-center mt-2.5 mb-5">
+            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded ">
+              {ubicacion}
+            </span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-3xl font-bold text-gray-900 dark:text-white">
+              {precio}
+            </span>
+            <button className="btn hover:bg-blue-400 hover:text-white hover:shadow-none hover:border-none">
+              Rentar
+              <svg
+                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
-        <button className="btn ml-6">
-            Rentar
-        </button>
-      </a>
+      </div>
     </>
   );
 };
