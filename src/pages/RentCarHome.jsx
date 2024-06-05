@@ -12,7 +12,6 @@ function RentCarHome() {
         <InfoCar carro="Nissan 2024" precio="$20.000" ubicacion="Vosnia" imgCarro="https://acroadtrip.blob.core.windows.net/catalogo-imagenes/s/RT_V_67c1989aeb7749bbac626a43e1dc6d42.webp"/>
         <InfoCar carro="Nissan 2024" precio="$20.000" ubicacion="Vosnia" imgCarro="https://acroadtrip.blob.core.windows.net/catalogo-imagenes/s/RT_V_67c1989aeb7749bbac626a43e1dc6d42.webp"/>
         <InfoCar carro="Nissan 2024" precio="$20.000" ubicacion="Vosnia" imgCarro="https://acroadtrip.blob.core.windows.net/catalogo-imagenes/s/RT_V_67c1989aeb7749bbac626a43e1dc6d42.webp"/>
-
       </section>
     </>
   );
