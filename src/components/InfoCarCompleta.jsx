@@ -1,12 +1,12 @@
 import React from "react";
 
-const InfoCarCompleta = ({ubicacion, marca, modelo, kilometraje, velocidad, imagen}) => {
+const InfoCarCompleta = ({ id, marca, modelo, precio, ubicacion, imgCarro, velocidad, kilometraje}) => {
   return (
-    <div className=" bg-white w-96 h-86 ml-36 border flex flex-col mt-20 rounded-2xl">
+<div className=" bg-white w-96 h-86 ml-36 border flex flex-col mt-24 rounded-2xl">
       <div>
         <img
           className="rounded-t-lg scale-75 translate-y-7 rounded-xl h-64 w-full"
-          src={imagen}
+          src={imgCarro}
           alt=""
         />
       </div>
@@ -28,7 +28,7 @@ const InfoCarCompleta = ({ubicacion, marca, modelo, kilometraje, velocidad, imag
         </p>
         <div>
           <h5 className="mb-2 text-3xl text-left font-bold tracking-tight text-gray-900">
-            $20000
+            {precio}
           </h5>
         </div>
       </div>
@@ -37,3 +37,4 @@ const InfoCarCompleta = ({ubicacion, marca, modelo, kilometraje, velocidad, imag
 };
 
 export default InfoCarCompleta;
+
