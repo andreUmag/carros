@@ -2,6 +2,7 @@ import { useState } from 'react'
 import RentCarHome from './pages/RentCarHome'
 import "./App.css"
 import RentCar from './pages/RentCar'
+import RentConfirmado from './pages/RentConfirmado'
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <>
       <RentCar/>
       {/* <RentCarHome/> */}
+      {/* <RentConfirmado/> */}
     </>
   )
 }
