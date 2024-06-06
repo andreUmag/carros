@@ -1,4 +1,6 @@
 import React from "react";
+import { Outlet, Link } from "react-router-dom";
+
 
 const InfoRentaConfirmado = ({
   img,
@@ -89,8 +91,9 @@ const InfoRentaConfirmado = ({
           <li>{direccion}</li>
           <li>{telefono}</li>
         </div>
+        <Link to="/" className="w-full">
         <button className="btn hover:bg-blue-400 hover:text-white hover:shadow-none hover:border-none">
-          Volver
+          Inicio
           <svg
             class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
             aria-hidden="true"
@@ -107,7 +110,9 @@ const InfoRentaConfirmado = ({
             />
           </svg>
         </button>
+        </Link>
       </div>
+      <Outlet />
     </div>
   );
 };

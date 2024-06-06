@@ -1,20 +1,22 @@
-import { useState } from 'react'
-import RentCarHome from './pages/RentCarHome'
-import "./App.css"
-import RentCar from './pages/RentCar'
-import RentConfirmado from './pages/RentConfirmado'
-
+import { useState } from "react";
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import RentCarHome from "./pages/RentCarHome";
+import RentCar from "./pages/RentCar";
+import RentConfirmado from "./pages/RentConfirmado";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
-      <RentCar/>
-      {/* <RentCarHome/> */}
-      {/* <RentConfirmado/> */}
+      <Routes>
+        <Route path="/" element={<RentCarHome />} />
+        <Route path="Rentar" element={<RentCar />} />
+        <Route path="Rentado" element={<RentConfirmado />} />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

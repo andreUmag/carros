@@ -1,4 +1,6 @@
 import React from "react";
+import { Outlet, Link } from "react-router-dom";
+
 
 const FormularioRenta = () => {
   return (
@@ -33,6 +35,7 @@ const FormularioRenta = () => {
           className="input input-bordered w-32 md:w-auto"
         />
       </form>
+      <Link to="/Rentado">
       <button className="btn hover:bg-blue-400 hover:text-white hover:shadow-none hover:border-none mt-5">
         Rentar
         <svg
@@ -51,6 +54,8 @@ const FormularioRenta = () => {
           />
         </svg>
       </button>
+      </Link>
+      <Outlet />
     </div>
   );
 };
