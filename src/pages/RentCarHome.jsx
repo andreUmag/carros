@@ -75,7 +75,7 @@ const carros = [
 function RentCarHome() {
   return (
     <>
-      <Busqueda />
+      <Busqueda /> 
       <section className="p-16 gap-6 grid grid-cols-3">
         {carros.map((carro) => (
           <InfoCar

@@ -29,7 +29,7 @@ function RentCar() {
               <button className="btn btn-ghost mt-5">Regresar</button>
             </Link>
           </div>
-          <FormularioRenta />
+          <FormularioRenta carId={id} />
         </section>
       </section>
       <Outlet />
@@ -38,3 +38,4 @@ function RentCar() {
 }
 
 export default RentCar;
+  

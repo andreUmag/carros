@@ -1,14 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
-
+import { DatePickerComponent } from "./DateIn";
 
 const FormularioRenta = () => {
+  const [fechaInicial, setFechaInicial] = useState("");
+  const [fechaFinal, setFechaFinal] = useState("");
+  const [error, setError] = useState("");
+
+  const handleRentar = () => {
+    if (new Date(fechaInicial) > new Date(fechaFinal)) {
+      setError("La fecha inicial no puede ser posterior a la fecha final.");
+      return;
+    }
+
+    setError("");
+    //ódigo para manejar el proceso de renta
+    console.log("Renta exitosa");
+  };
+
   return (
     <div className="p-5 gap-4 mt-2 bg-gray-50 w-96 rounded-xl translate-y-2">
-      <form class="max-w-sm mx-auto flex flex-col gap-4">
-        <h5 class="mb-2 text-xl text-left font-bold tracking-tight text-gray-900">
-          Formulario de Renta
-        </h5>
+      <h5 className="mb-2 text-xl text-left font-bold tracking-tight text-gray-900">
+        Formulario de Renta
+      </h5>
+      <div className="datein mt-5 flex gap-2">
+        <DatePickerComponent dateInfo="Fecha Inicial" onDateChange={setFechaInicial} />
+        <DatePickerComponent dateInfo="Fecha Final" onDateChange={setFechaFinal} />
+      </div>
+      <form className="max-w-sm mx-auto grid grid-cols-2 gap-4 mt-5">
+        
         <input
           type="text"
           placeholder="Nombre"
@@ -35,25 +55,29 @@ const FormularioRenta = () => {
           className="input input-bordered w-32 md:w-auto"
         />
       </form>
+      {error && <div className="text-red-500 mt-2">{error}</div>}
       <Link to="/Rentado">
-      <button className="btn hover:bg-blue-400 hover:text-white hover:shadow-none hover:border-none mt-5">
-        Rentar
-        <svg
-          class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 14 10"
+        <button
+          className="btn hover:bg-blue-400 hover:text-white hover:shadow-none hover:border-none mt-5"
+          onClick={handleRentar}
         >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M1 5h12m0 0L9 1m4 4L9 9"
-          />
-        </svg>
-      </button>
+          Rentar
+          <svg
+            className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"
+            />
+          </svg>
+        </button>
       </Link>
       <Outlet />
     </div>
