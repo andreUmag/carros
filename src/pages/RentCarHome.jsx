@@ -2,7 +2,9 @@ import React from "react";
 import Busqueda from "../components/Busqueda";
 import InfoCar from "../components/InfoCar";
 import { Outlet, Link, useParams } from "react-router-dom";
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const carros = [
   {
@@ -74,25 +76,33 @@ const carros = [
 ];
 
 function RentCarHome() {
-  
-  const {id} = useParams();
+  const { id } = useParams();
+  const settings = {
+    className: "slider variable-width w-[958px]",
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    variableWidth: true
+  };
 
   return (
     <>
-      <Busqueda /> 
-      <section className="p-16 gap-6 grid grid-cols-3">
-        {carros.map((carro) => (
-          <InfoCar
-            key={carro.id}
-            marca={carro.marca}
-            precio={carro.precio}
-            ubicacion={carro.ubicacion}
-            imgCarro={carro.imgCarro}
-            modelo={carro.modelo}
-            velocidad={carro.velocidad}
-            kilometraje={carro.kilometraje}
-          />
-        ))}
+      <Busqueda />
+      <section className="p-16 translate-y-24 translate-x-28 h-96">
+        <Slider {...settings}>
+          {carros.map((carro) => (
+            <InfoCar
+              key={carro.id}
+              marca={carro.marca}
+              precio={carro.precio}
+              ubicacion={carro.ubicacion}
+              imgCarro={carro.imgCarro}
+              modelo={carro.modelo}
+              velocidad={carro.velocidad}
+              kilometraje={carro.kilometraje}
+            />
+          ))}
+        </Slider>
       </section>
       <Outlet />
     </>
