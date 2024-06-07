@@ -3,7 +3,7 @@ import { format } from 'date-fns'
 import { Calendar } from 'phosphor-react'
 import { Button, DatePicker, Popover } from 'keep-react'
 
-export const DatePickerComponent = ({ onDateChange }) => {
+export const DateIn = ({ onDateChange }) => {
   const [selected, setSelected] = useState(null)
 
   const handleDateSelect = (date) => {

@@ -12,9 +12,9 @@ const InfoCarCompleta = ({
 }) => {
   return (
     <div className=" bg-white w-96 h-86 ml-36  flex flex-col mt-24 rounded-2xl">
-      <div>
+      <div className="rounded-xl h-64 w-80">
         <img
-          className="rounded-t-lg scale-75 translate-y-7 rounded-xl h-64 w-80 ml-7"
+          className="rounded-t-lg scale-75 translate-y-12 object-cover ml-7"
           src={imgCarro}
           alt=""
         />

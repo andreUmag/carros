@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { DatePickerComponent } from "./DateIn";
+import { DateIn } from "./DateIn";
 
 const carros = [
   {
@@ -72,7 +72,7 @@ const Busqueda = () => {
             </select>
           </form>
         </div>
-        <DatePickerComponent onDateChange={handleDateChange} />
+        <DateIn onDateChange={handleDateChange} />
       </div>
       <button
         className="btn bg-[#465952] text-gray-400 ml-6 hover:bg-green-700 hover:text-white"

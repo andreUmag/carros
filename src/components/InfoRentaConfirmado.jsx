@@ -14,11 +14,11 @@ const InfoRentaConfirmado = ({
   estado,
 }) => {
   return (
-    <div className="card lg:card-side bg-base-100 shadow-xl">
+    <div className="card lg:card-side bg-base-100">
       <figure className="w-full max-w-sm bg-white  rounded-lg ">
         <div className="card w-96 bg-base-100 ">
           <figure>
-            <img className="p-5" src={img} alt="Shoes" />
+            <img className="p-5 object-cover" src={img} alt="Shoes" />
           </figure>
           <div className="card-body ">
             <h2 className="card-title">
