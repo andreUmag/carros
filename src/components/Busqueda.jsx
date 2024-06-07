@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { DatePickerComponent } from "./DateIn";
 
 const carros = [
   {
@@ -27,15 +26,8 @@ const Busqueda = () => {
   const [fechaInicial, setFechaInicial] = useState("");
   const [fechaFinal, setFechaFinal] = useState("");
   const [buscar, setBuscar] = useState([]);
-  const [error, setError] = useState("");
 
   const handleBuscar = () => {
-    if (new Date(fechaInicial) > new Date(fechaFinal)) {
-      setError("La fecha inicial no puede ser posterior a la fecha final.");
-      return;
-    }
-
-    setError("");
     const resultados = carros.filter(
       (car) =>
         car.locacion.toLowerCase() === locacion.toLowerCase() &&
@@ -46,39 +38,42 @@ const Busqueda = () => {
   };
 
   return (
-    
-    <div className="navbar bg-base-100 mt-8">
+    <div className="navbar bg-base-100 p-8 fixed -translate-x-32">
       <div className="flex-1">
         <a className="btn btn-ghost text-xl">Renta de Carros</a>
       </div>
-      {error && <div className="text-red-500 mt-2">{error}</div>}
       <div className="flex-none gap-2">
         <div className="form-control">
-          <select
-            className="select select-bordered border-gray-300 rounded-xl w-full max-w-xs"
+          <input
+            type="text"
+            placeholder="Localizacion"
+            className="input input-bordered w-24 md:w-auto"
             value={locacion}
             onChange={(e) => setLocacion(e.target.value)}
-          >
-            <option value="" disabled>
-              Localización
-            </option> 
-            <option value="Bogota">Bogota</option>
-            <option value="Santa Marta">Santa Marta</option>
-            <option value="Barranquilla">Barranquilla</option>
-          </select>
+          />
         </div>
-        <DatePickerComponent dateInfo="Fecha Inicial" onDateChange={setFechaInicial} />
-        <DatePickerComponent dateInfo="Fecha Final" onDateChange={setFechaFinal} />
+        <div className="form-control">
+          <input
+            type="text"
+            placeholder="Fecha Inicial"
+            className="input input-bordered w-24 md:w-auto"
+            value={fechaInicial}
+            onChange={(e) => setFechaInicial(e.target.value)}
+          />
+        </div>
+        <div className="form-control">
+          <input
+            type="text"
+            placeholder="Fecha Final"
+            className="input input-bordered w-24 md:w-auto"
+            value={fechaFinal}
+            onChange={(e) => setFechaFinal(e.target.value)}
+          />
+        </div>
       </div>
       <button className="btn ml-6" onClick={handleBuscar}>
         Buscar
       </button>
-      
-      <ul>
-        {buscar.map((car) => (
-          <li key={car.id}>{car.nombre}</li>
-        ))}
-      </ul>
     </div>
   );
 };

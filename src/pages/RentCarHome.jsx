@@ -1,7 +1,8 @@
 import React from "react";
 import Busqueda from "../components/Busqueda";
 import InfoCar from "../components/InfoCar";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useParams } from "react-router-dom";
+
 
 const carros = [
   {
@@ -73,6 +74,9 @@ const carros = [
 ];
 
 function RentCarHome() {
+  
+  const {id} = useParams();
+
   return (
     <>
       <Busqueda /> 

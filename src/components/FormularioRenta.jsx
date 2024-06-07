@@ -1,34 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import { Outlet, Link } from "react-router-dom";
-import { DatePickerComponent } from "./DateIn";
 
 const FormularioRenta = () => {
-  const [fechaInicial, setFechaInicial] = useState("");
-  const [fechaFinal, setFechaFinal] = useState("");
-  const [error, setError] = useState("");
-
-  const handleRentar = () => {
-    if (new Date(fechaInicial) > new Date(fechaFinal)) {
-      setError("La fecha inicial no puede ser posterior a la fecha final.");
-      return;
-    }
-
-    setError("");
-    //ódigo para manejar el proceso de renta
-    console.log("Renta exitosa");
-  };
-
   return (
-    <div className="p-5 gap-4 mt-2 bg-gray-50 w-96 rounded-xl translate-y-2">
+    <div className="p-5 gap-4 mt-2 bg-gray-50 w-96 rounded-xl translate-y-10">
       <h5 className="mb-2 text-xl text-left font-bold tracking-tight text-gray-900">
         Formulario de Renta
       </h5>
-      <div className="datein mt-5 flex gap-2">
-        <DatePickerComponent dateInfo="Fecha Inicial" onDateChange={setFechaInicial} />
-        <DatePickerComponent dateInfo="Fecha Final" onDateChange={setFechaFinal} />
-      </div>
       <form className="max-w-sm mx-auto grid grid-cols-2 gap-4 mt-5">
-        
+        <input
+          type="text"
+          placeholder="Fecha Inicial"
+          className="input input-bordered w-24 md:w-auto"
+        />
+        <input
+          type="text"
+          placeholder="Fecha Final"
+          className="input input-bordered w-24 md:w-auto"
+        />
         <input
           type="text"
           placeholder="Nombre"
@@ -55,12 +44,9 @@ const FormularioRenta = () => {
           className="input input-bordered w-32 md:w-auto"
         />
       </form>
-      {error && <div className="text-red-500 mt-2">{error}</div>}
+      <div className="datein"></div>
       <Link to="/Rentado">
-        <button
-          className="btn hover:bg-blue-400 hover:text-white hover:shadow-none hover:border-none mt-5"
-          onClick={handleRentar}
-        >
+        <button className="btn hover:bg-blue-400 hover:text-white hover:shadow-none hover:border-none mt-5">
           Rentar
           <svg
             className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
@@ -71,9 +57,9 @@ const FormularioRenta = () => {
           >
             <path
               stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
               d="M1 5h12m0 0L9 1m4 4L9 9"
             />
           </svg>
