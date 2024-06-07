@@ -38,7 +38,7 @@ const Busqueda = () => {
   };
 
   return (
-    <div className="navbar bg-base-100 p-8 fixed -translate-x-32">
+    <div className="navbar bg-base-100 p-8 fixed -translate-x-32 ">
       <div className="flex-1">
         <a className="btn btn-ghost text-xl">Renta de Carros</a>
       </div>
