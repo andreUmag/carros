@@ -6,12 +6,21 @@ import { Outlet, Link } from "react-router-dom";
 
 function RentCar() {
   const location = useLocation();
-  const { id, marca, modelo, precio, ubicacion, imgCarro, velocidad, kilometraje} = location.state || {};
+  const {
+    id,
+    marca,
+    modelo,
+    precio,
+    ubicacion,
+    imgCarro,
+    velocidad,
+    kilometraje,
+  } = location.state || {};
 
   return (
     <>
       <section className="flex flex-row">
-        <section className="w-full h-dvh basis-1/2 p-2 translate-x-20 items-center">
+        <section className="w-full h-dvh basis-1/2 p-2 translate-x-32 items-center">
           <InfoCarCompleta
             id={id}
             marca={marca}
@@ -26,7 +35,9 @@ function RentCar() {
         <section className="w-full h-dvh pl-36">
           <div className="p-2 flex flex-row-reverse">
             <Link to="/" className="p-2 flex flex-row-reverse">
-              <button className="btn btn-ghost mt-5">Regresar</button>
+              <button className="btn btn-ghost mt-5 bg-[#465952] hover:bg-green-700 text-white">
+                Regresar
+              </button>
             </Link>
           </div>
           <FormularioRenta carId={id} />
@@ -38,4 +49,3 @@ function RentCar() {
 }
 
 export default RentCar;
-  

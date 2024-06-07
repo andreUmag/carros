@@ -18,7 +18,7 @@ export const DatePickerComponent = ({ onDateChange }) => {
           className="w-[286px] justify-start gap-2 rounded-lg border border-metal-50 text-left text-body-4 font-normal hover:bg-white active:focus:scale-100"
           variant="outline"
           color="secondary">
-          <Calendar size={20} color="#F24444" />
+          <Calendar size={20} color="#F24444" className=''/>
           {selected ? (
             <>
               {format(selected?.from ?? new Date(), 'LLL dd, y')} - {format(selected?.to ?? new Date(), 'LLL dd, y')}

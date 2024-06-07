@@ -11,10 +11,10 @@ const InfoCarCompleta = ({
   kilometraje,
 }) => {
   return (
-    <div className=" bg-white w-96 h-86 ml-36 border flex flex-col mt-24 rounded-2xl">
+    <div className=" bg-white w-96 h-86 ml-36  flex flex-col mt-24 rounded-2xl">
       <div>
         <img
-          className="rounded-t-lg scale-75 translate-y-7 rounded-xl h-64 w-full"
+          className="rounded-t-lg scale-75 translate-y-7 rounded-xl h-64 w-80 ml-7"
           src={imgCarro}
           alt=""
         />
@@ -24,7 +24,7 @@ const InfoCarCompleta = ({
           <h5 className="mb-2 text-2xl text-left font-bold tracking-tight text-gray-900 flex gap-2">
             {modelo}
             <div className="flex items-center mt-2.5 mb-5">
-              <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded ">
+              <span className="bg-[#F2A9A2] text-[#F24444] text-xs font-semibold px-2.5 py-0.5 rounded ">
                 {ubicacion}
               </span>
             </div>

@@ -4,7 +4,7 @@ import { Outlet, Link } from "react-router-dom";
 const FormularioRenta = () => {
   return (
     <div className="p-5 gap-4 mt-2 bg-gray-50 w-96 rounded-xl translate-y-10">
-      <h5 className="mb-2 text-xl text-left font-bold tracking-tight text-gray-900">
+      <h5 className="mb-2 text-xl text-left font-bold tracking-tight text-[#F24444]">
         Formulario de Renta
       </h5>
       <form className="max-w-sm mx-auto grid grid-cols-2 gap-4 mt-5">
@@ -46,7 +46,7 @@ const FormularioRenta = () => {
       </form>
       <div className="datein"></div>
       <Link to="/Rentado">
-        <button className="btn hover:bg-blue-400 hover:text-white hover:shadow-none hover:border-none mt-5">
+        <button className="btn hover:bg-[#465952] hover:text-white hover:shadow-none hover:border-none mt-5">
           Rentar
           <svg
             className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
