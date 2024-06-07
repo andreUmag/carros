@@ -11,14 +11,15 @@ const InfoCar = ({ id, marca, modelo, precio, ubicacion, imgCarro, velocidad, ki
   };
 
   return (
-    <div className="w-[300px] max-w-sm mr-5 bg-white border border-gray-200 rounded-lg shadow grid justify-center">
-      <img className="p-8 rounded-t-lg h-60 w-80 rounded-xl" src={imgCarro} alt="product image" />
+    <div className="p-[1px]">
+      <div className="w-[300px] max-w-sm mr-5 bg-white  border-gray-200 rounded-2xl  grid justify-center">
+      <img className="p-8 h-60 w-80 rounded-xl" src={imgCarro} alt="product image" />
       <div className="px-5 pb-5">
-        <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+        <h5 className="text-xl font-semibold tracking-tight text-gray-900">
           {marca}
         </h5>
-        <div className="flex items-center mt-2.5 mb-5">
-          <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+        <div className="flex items-center mt-2.5 mb-5 translate-y-5">
+          <span className="bg-[#F2A9A2] text-[#F24444] text-xs font-semibold px-2.5 py-0.5 rounded">
             {ubicacion}
           </span>
         </div>
@@ -27,7 +28,7 @@ const InfoCar = ({ id, marca, modelo, precio, ubicacion, imgCarro, velocidad, ki
             {precio}
           </span>
           <button
-            className="btn hover:bg-blue-400 hover:text-white hover:shadow-none hover:border-none"
+            className="btn hover:bg-[#465952] hover:text-white hover:shadow-none hover:border-none"
             onClick={handleRentar}
           >
             Rentar
@@ -50,6 +51,7 @@ const InfoCar = ({ id, marca, modelo, precio, ubicacion, imgCarro, velocidad, ki
         </div>
       </div>
       <Outlet />
+    </div>
     </div>
   );
 };

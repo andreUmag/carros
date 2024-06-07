@@ -78,7 +78,7 @@ const carros = [
 function RentCarHome() {
   const { id } = useParams();
   const settings = {
-    className: "slider variable-width w-[958px]",
+    className: "slider variable-width w-[965px]",
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 3,
@@ -88,7 +88,7 @@ function RentCarHome() {
   return (
     <>
       <Busqueda />
-      <section className="p-16 translate-y-24 translate-x-28 h-96">
+      <section className="p-[96.9px] translate-x-[88px] ">
         <Slider {...settings}>
           {carros.map((carro) => (
             <InfoCar

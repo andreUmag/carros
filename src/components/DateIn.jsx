@@ -1,30 +1,32 @@
-import { format } from 'date-fns';
-import { useState } from 'react';
-import { Calendar } from 'phosphor-react';
-import { Button, DatePicker, Popover } from 'keep-react';
 
-export const DatePickerComponent = ({ dateInfo, onDateChange }) => {
-  const [date, setDate] = useState(null);
+'use client'
+import { useState } from 'react'
+import { format } from 'date-fns'
+import { Calendar } from 'phosphor-react'
+import { Button, DatePicker, Popover } from 'keep-react'
 
-  const handleDateChange = (selectedDate) => {
-    setDate(selectedDate);
-    onDateChange(selectedDate);
-  };
-
+export const DatePickerComponent = () => {
+  const [selected, setSelected] = useState(null)
   return (
     <Popover showArrow={false} placement="bottom-start">
       <Popover.Action asChild>
         <Button
-          className="w-[186px] justify-start gap-2 rounded-xl border border-metal-50 px-4 text-left text-body-4 font-normal hover:bg-white active:focus:scale-100"
+          className="w-[286px] justify-start gap-2 rounded-lg border border-metal-50 text-left text-body-4 font-normal hover:bg-white active:focus:scale-100"
           variant="outline"
           color="secondary">
           <Calendar size={20} color="#AFBACA" />
-          {date ? format(date ?? new Date(), 'PPP') : <span>{dateInfo}</span>}
+          {selected ? (
+            <>
+              {format(selected?.from ?? new Date(), 'LLL dd, y')} - {format(selected?.to ?? new Date(), 'LLL dd, y')}
+            </>
+          ) : (
+            <span>Selecciona las fechas</span>
+          )}
         </Button>
       </Popover.Action>
       <Popover.Content className="z-50 max-w-min">
-        <DatePicker mode="single" selected={date} onSelect={handleDateChange} showOutsideDays={true} />
+        <DatePicker mode="range" numberOfMonths={2} selected={selected} onSelect={setSelected} showOutsideDays={true} />
       </Popover.Content>
     </Popover>
-  );
-};
+  )
+}

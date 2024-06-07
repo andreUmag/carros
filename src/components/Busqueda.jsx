@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { DatePickerComponent } from "./DateIn";
 
 const carros = [
   {
@@ -38,9 +39,9 @@ const Busqueda = () => {
   };
 
   return (
-    <div className="navbar bg-base-100 p-8 fixed -translate-x-32 ">
+    <div className="navbar rounded-lg bg-base-100 bg-transparent p-8 w-full">
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl">Renta de Carros</a>
+        <a className="btn btn-ghost text-xl text-[#F24444]">Renta de Carros</a>
       </div>
       <div className="flex-none gap-2">
         <div className="form-control">
@@ -52,7 +53,8 @@ const Busqueda = () => {
             onChange={(e) => setLocacion(e.target.value)}
           />
         </div>
-        <div className="form-control">
+        <DatePickerComponent/>
+        {/* <div className="form-control">
           <input
             type="text"
             placeholder="Fecha Inicial"
@@ -69,9 +71,9 @@ const Busqueda = () => {
             value={fechaFinal}
             onChange={(e) => setFechaFinal(e.target.value)}
           />
-        </div>
+        </div> */}
       </div>
-      <button className="btn ml-6" onClick={handleBuscar}>
+      <button className="btn  bg-[#465952] text-gray-400 ml-6 hover:bg-green-700 hover:text-white" onClick={handleBuscar}>
         Buscar
       </button>
     </div>
