@@ -23,10 +23,21 @@ const carros = [
 ];
 
 const Busqueda = () => {
-  const [locacion, setLocacion] = useState("");
+  const [locacion, setLocacion] = useState('');
   const [fechaInicial, setFechaInicial] = useState("");
   const [fechaFinal, setFechaFinal] = useState("");
   const [buscar, setBuscar] = useState([]);
+
+  const handleSelectChange = (e) => {
+    setLocacion(e.target.value);
+  };
+
+  const handleDateChange = (selected) => {
+    if (selected?.from && selected?.to) {
+      setFechaInicial(selected.from.toISOString().split('T')[0]);
+      setFechaFinal(selected.to.toISOString().split('T')[0]);
+    }
+  };
 
   const handleBuscar = () => {
     const resultados = carros.filter(
@@ -45,37 +56,41 @@ const Busqueda = () => {
       </div>
       <div className="flex-none gap-2">
         <div className="form-control">
-          <input
-            type="text"
-            placeholder="Localizacion"
-            className="input input-bordered w-24 md:w-auto"
-            value={locacion}
-            onChange={(e) => setLocacion(e.target.value)}
-          />
+          <form>
+            <select
+              id="countries"
+              className="border text-gray-900 text-sm rounded-lg focus:ring-[#F24444] focus:border-[#dfdfdf] block w-full p-3.5"
+              value={locacion}
+              onChange={handleSelectChange}
+            >
+              <option className="bg-[#f2444479]" value="">
+                Ubicacion
+              </option>
+              <option value="Bogota">Bogota</option>
+              <option value="Santa Marta">Santa Marta</option>
+              <option value="Barranquilla">Barranquilla</option>
+            </select>
+          </form>
         </div>
-        <DatePickerComponent/>
-        {/* <div className="form-control">
-          <input
-            type="text"
-            placeholder="Fecha Inicial"
-            className="input input-bordered w-24 md:w-auto"
-            value={fechaInicial}
-            onChange={(e) => setFechaInicial(e.target.value)}
-          />
-        </div>
-        <div className="form-control">
-          <input
-            type="text"
-            placeholder="Fecha Final"
-            className="input input-bordered w-24 md:w-auto"
-            value={fechaFinal}
-            onChange={(e) => setFechaFinal(e.target.value)}
-          />
-        </div> */}
+        <DatePickerComponent onDateChange={handleDateChange} />
       </div>
-      <button className="btn  bg-[#465952] text-gray-400 ml-6 hover:bg-green-700 hover:text-white" onClick={handleBuscar}>
+      <button
+        className="btn bg-[#465952] text-gray-400 ml-6 hover:bg-green-700 hover:text-white"
+        onClick={handleBuscar}
+      >
         Buscar
       </button>
+      <div>
+        {buscar.length > 0 ? (
+          <ul>
+            {/* {buscar.map(car => (
+              <li key={car.id}>{car.nombre} - {car.locacion}</li>
+            ))} */}
+          </ul>
+        ) : (
+          console.log("No hay resultados")
+        )}
+      </div>
     </div>
   );
 };

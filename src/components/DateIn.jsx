@@ -1,12 +1,16 @@
-
-'use client'
 import { useState } from 'react'
 import { format } from 'date-fns'
 import { Calendar } from 'phosphor-react'
 import { Button, DatePicker, Popover } from 'keep-react'
 
-export const DatePickerComponent = () => {
+export const DatePickerComponent = ({ onDateChange }) => {
   const [selected, setSelected] = useState(null)
+
+  const handleDateSelect = (date) => {
+    setSelected(date)
+    onDateChange(date)
+  }
+
   return (
     <Popover showArrow={false} placement="bottom-start">
       <Popover.Action asChild>
@@ -14,7 +18,7 @@ export const DatePickerComponent = () => {
           className="w-[286px] justify-start gap-2 rounded-lg border border-metal-50 text-left text-body-4 font-normal hover:bg-white active:focus:scale-100"
           variant="outline"
           color="secondary">
-          <Calendar size={20} color="#AFBACA" />
+          <Calendar size={20} color="#F24444" />
           {selected ? (
             <>
               {format(selected?.from ?? new Date(), 'LLL dd, y')} - {format(selected?.to ?? new Date(), 'LLL dd, y')}
@@ -25,7 +29,7 @@ export const DatePickerComponent = () => {
         </Button>
       </Popover.Action>
       <Popover.Content className="z-50 max-w-min">
-        <DatePicker mode="range" numberOfMonths={2} selected={selected} onSelect={setSelected} showOutsideDays={true} />
+        <DatePicker mode="range" numberOfMonths={2} selected={selected} onSelect={handleDateSelect} showOutsideDays={true} />
       </Popover.Content>
     </Popover>
   )
