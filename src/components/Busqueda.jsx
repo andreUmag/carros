@@ -1,32 +1,11 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { DateIn } from "./DateIn";
 
-const carros = [
-  {
-    id: 1,
-    nombre: "Toyota Padro",
-    locacion: "Bogota",
-    fechaDisponible: ["2024-06-10", "2024-06-15"],
-  },
-  {
-    id: 2,
-    nombre: "Honda Civic",
-    locacion: "Santa Marta",
-    fechaDisponible: ["2024-06-11", "2024-06-16"],
-  },
-  {
-    id: 3,
-    nombre: "Ford Mustang",
-    locacion: "Barranquilla",
-    fechaDisponible: ["2024-06-12", "2024-06-17"],
-  },
-];
-
-const Busqueda = () => {
+const Busqueda = ({ setCarros, setLoading }) => {
   const [locacion, setLocacion] = useState('');
   const [fechaInicial, setFechaInicial] = useState("");
   const [fechaFinal, setFechaFinal] = useState("");
-  const [buscar, setBuscar] = useState([]);
 
   const handleSelectChange = (e) => {
     setLocacion(e.target.value);
@@ -34,19 +13,36 @@ const Busqueda = () => {
 
   const handleDateChange = (selected) => {
     if (selected?.from && selected?.to) {
-      setFechaInicial(selected.from.toISOString().split('T')[0]);
-      setFechaFinal(selected.to.toISOString().split('T')[0]);
+      setFechaInicial(selected.from.toISOString());
+      setFechaFinal(selected.to.toISOString());
     }
   };
 
   const handleBuscar = () => {
-    const resultados = carros.filter(
-      (car) =>
-        car.locacion.toLowerCase() === locacion.toLowerCase() &&
-        car.fechaDisponible.includes(fechaInicial) &&
-        car.fechaDisponible.includes(fechaFinal)
-    );
-    setBuscar(resultados);
+    if (!locacion || !fechaInicial || !fechaFinal) {
+      console.error("Todos los campos son obligatorios");
+      return;
+    }
+
+    setLoading(true);
+    console.log("Parametros de búsqueda:", { locacion, fechaInicial, fechaFinal });
+
+    axios
+      .get("http://localhost:8080/api/v1/cars/available", {
+        params: {
+          ciudad: locacion,
+          fechaInicio: fechaInicial,
+          fechaFinal: fechaFinal,
+        },
+      })
+      .then((response) => {
+        setCarros(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching the car data:", error);
+        setLoading(false);
+      });
   };
 
   return (
@@ -66,7 +62,7 @@ const Busqueda = () => {
               <option className="bg-[#f2444479]" value="">
                 Ubicacion
               </option>
-              <option value="Bogota">Bogota</option>
+              <option value="Bogota">Cartagena</option>
               <option value="Santa Marta">Santa Marta</option>
               <option value="Barranquilla">Barranquilla</option>
             </select>
@@ -80,17 +76,6 @@ const Busqueda = () => {
       >
         Buscar
       </button>
-      <div>
-        {buscar.length > 0 ? (
-          <ul>
-            {/* {buscar.map(car => (
-              <li key={car.id}>{car.nombre} - {car.locacion}</li>
-            ))} */}
-          </ul>
-        ) : (
-          console.log("No hay resultados")
-        )}
-      </div>
     </div>
   );
 };

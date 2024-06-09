@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { DatePickerComponent } from "./DateInForm";
 
 const InfoCarCompleta = ({
   id,
@@ -87,6 +88,8 @@ const InfoCarCompleta = ({
           Formulario de Renta
         </h5>
         <form onSubmit={handleSubmit} className="max-w-sm mx-auto grid grid-cols-2 gap-4 mt-5">
+          <DatePickerComponent/>
+          <br />
           <input
             type="text"
             name="nombre"
