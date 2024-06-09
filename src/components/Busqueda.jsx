@@ -50,7 +50,7 @@ const Busqueda = () => {
   };
 
   return (
-    <div className="navbar rounded-lg bg-base-100 bg-transparent p-8 w-full">
+    <div className="navbar rounded-lg bg-base-100 bg-transparent p-8 w-full mb-10">
       <div className="flex-1">
         <a className="btn btn-ghost text-xl text-[#F24444]">Renta de Carros</a>
       </div>

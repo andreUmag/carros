@@ -1,5 +1,6 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
+import { DateIn } from "./DateIn";
 
 const FormularioRenta = () => {
   return (
@@ -8,7 +9,7 @@ const FormularioRenta = () => {
         Formulario de Renta
       </h5>
       <form className="max-w-sm mx-auto grid grid-cols-2 gap-4 mt-5">
-        <input
+        {/* <input
           type="text"
           placeholder="Fecha Inicial"
           className="input input-bordered w-24 md:w-auto"
@@ -17,7 +18,9 @@ const FormularioRenta = () => {
           type="text"
           placeholder="Fecha Final"
           className="input input-bordered w-24 md:w-auto"
-        />
+        /> */}
+        
+        <br/>
         <input
           type="text"
           placeholder="Nombre"

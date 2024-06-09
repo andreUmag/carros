@@ -1,7 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import InfoCarCompleta from "../components/InfoCarCompleta";
-import FormularioRenta from "../components/FormularioRenta";
 import { Outlet, Link } from "react-router-dom";
 
 function RentCar() {
@@ -40,7 +39,7 @@ function RentCar() {
               </button>
             </Link>
           </div>
-          <FormularioRenta carId={id} />
+          
         </section>
       </section>
       <Outlet />

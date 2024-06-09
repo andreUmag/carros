@@ -10,6 +10,7 @@ const InfoCarCompleta = ({
   velocidad,
   kilometraje,
 }) => {
+  
   return (
     <div className=" bg-white w-96 h-86 ml-36  flex flex-col mt-24 rounded-2xl">
       <div className="rounded-xl h-64 w-80">
@@ -31,7 +32,7 @@ const InfoCarCompleta = ({
           </h5>
         </div>
         <p className="mb-3 font-normal text-left text-gray-700 ">
-          Este vehículo de la marca {marca} tiene un kilometraje de{" "}
+          Este vehículo de la marca {marca} tiene un kilometraje de
           {kilometraje} Km, alcanza una velocidad maxima de {velocidad} Km/h.
         </p>
         <div>
@@ -41,6 +42,10 @@ const InfoCarCompleta = ({
         </div>
       </div>
     </div>
+    
+
+
+    
   );
 };
 
