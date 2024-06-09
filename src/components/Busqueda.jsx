@@ -52,14 +52,14 @@ const Busqueda = () => {
   return (
     <div className="navbar rounded-lg bg-base-100 bg-transparent p-8 w-full mb-10">
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl text-[#F24444]">Renta de Carros</a>
+        <a className="btn btn-ghost text-xl text-white">The Auto Gallery</a>
       </div>
       <div className="flex-none gap-2">
         <div className="form-control">
           <form>
             <select
               id="countries"
-              className="border text-gray-900 text-sm rounded-lg focus:ring-[#F24444] focus:border-[#dfdfdf] block w-full p-3.5"
+              className="border text-gray-900 text-sm rounded-lg focus:ring-[#F23005] focus:border-[#dfdfdf] block w-full p-3.5"
               value={locacion}
               onChange={handleSelectChange}
             >
@@ -75,7 +75,7 @@ const Busqueda = () => {
         <DateIn onDateChange={handleDateChange} />
       </div>
       <button
-        className="btn bg-[#465952] text-gray-400 ml-6 hover:bg-green-700 hover:text-white"
+        className="btn bg-[#D92B04] text-white ml-6 hover:bg-[#F23005] border-none"
         onClick={handleBuscar}
       >
         Buscar

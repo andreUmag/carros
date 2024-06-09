@@ -34,7 +34,7 @@ function RentCar() {
         <section className="w-full h-dvh pl-36">
           <div className="p-2 flex flex-row-reverse">
             <Link to="/" className="p-2 flex flex-row-reverse">
-              <button className="btn btn-ghost mt-5 bg-[#465952] hover:bg-green-700 text-white">
+              <button className="btn btn-ghost mt-5 bg-[#D92B04] ml-6 hover:bg-[#F23005] border-none text-white">
                 Regresar
               </button>
             </Link>

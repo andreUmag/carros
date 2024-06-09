@@ -35,7 +35,7 @@ const InfoRentaConfirmado = ({
       <div className="card-body w-96">
         <div className="mb-2 text-3xl text-left font-bold tracking-tight text-gray-900 mt-8">
           Rentado por <br />
-          <div className="text-[#F24444] mb-2 text-3xl text-left font-bold tracking-tight">
+          <div className="text-[#D92B04] mb-2 text-3xl text-left font-bold tracking-tight">
             {nombre} {apellido}
           </div>
         </div>
@@ -43,9 +43,9 @@ const InfoRentaConfirmado = ({
         <ol className="items-center sm:flex">
           <li className="relative mb-6 sm:mb-0">
             <div className="flex items-center">
-              <div className="z-10 flex items-center justify-center w-6 h-6 bg-[#ffeeed] rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+              <div className="z-10 flex items-center justify-center w-6 h-6 bg-[#F23005] rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
                 <svg
-                  className="w-2.5 h-2.5 text-[#F24444] "
+                  className="w-2.5 h-2.5 text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -64,9 +64,9 @@ const InfoRentaConfirmado = ({
           </li>
           <li className="relative mb-6 sm:mb-0">
             <div className="flex items-center">
-              <div className="z-10 flex items-center justify-center w-6 h-6 bg-[#ffeeed] rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+              <div className="z-10 flex items-center justify-center w-6 h-6 bg-[#F23005] rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
                 <svg
-                  className="w-2.5 h-2.5 text-[#F24444]"
+                  className="w-2.5 h-2.5 text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -93,7 +93,7 @@ const InfoRentaConfirmado = ({
           <li>{telefono}</li>
         </div>
         <Link to="/" className="w-full">
-          <button className="btn hover:bg-[#465952] hover:text-white hover:shadow-none hover:border-none mt-10">
+          <button className="btn hover:bg-[#731702] hover:text-white hover:shadow-none hover:border-none mt-10">
             Seguir rentando
           </button>
         </Link>

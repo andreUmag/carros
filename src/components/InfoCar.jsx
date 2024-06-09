@@ -43,7 +43,7 @@ const InfoCar = ({
             {marca}
           </h5>
           <div className="flex items-center mt-2.5 mb-5 translate-y-5">
-            <span className="bg-[#F2A9A2] text-[#F24444] text-xs font-semibold px-2.5 py-0.5 rounded">
+            <span className="bg-[#F23005] text-white text-xs font-semibold px-2.5 py-0.5 rounded">
               {ubicacion}
             </span>
           </div>
@@ -52,7 +52,7 @@ const InfoCar = ({
               {precio}
             </span>
             <button
-              className="btn hover:bg-[#465952] hover:text-white hover:shadow-none hover:border-none"
+              className="btn hover:bg-[#731702] hover:text-white hover:shadow-none hover:border-none"
               onClick={handleRentar}
             >
               Rentar

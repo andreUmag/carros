@@ -65,7 +65,7 @@ const InfoCarCompleta = ({
             <h5 className="mb-2 text-2xl text-left font-bold tracking-tight text-gray-900 flex gap-2">
               {modelo}
               <div className="flex items-center mt-2.5 mb-5">
-                <span className="bg-[#F2A9A2] text-[#F24444] text-xs font-semibold px-2.5 py-0.5 rounded ">
+                <span className="bg-[#F23005] text-white text-xs font-semibold px-2.5 py-0.5 rounded ">
                   {ubicacion}
                 </span>
               </div>
@@ -83,7 +83,7 @@ const InfoCarCompleta = ({
       </div>
 
       <div className="p-14 gap-4 bg-white w-[500px] h-86 rounded-xl mt-24">
-        <h5 className="mb-2 text-xl text-left font-bold tracking-tight text-[#F24444]">
+        <h5 className="mb-2 text-xl text-left font-bold tracking-tight text-[#D92B04]">
           Formulario de Renta
         </h5>
         <form onSubmit={handleSubmit} className="max-w-sm mx-auto grid grid-cols-2 gap-4 mt-5">
@@ -128,7 +128,7 @@ const InfoCarCompleta = ({
             className="input input-bordered w-32 md:w-auto"
           />
           {error && <div className="col-span-2 text-red-500">{error}</div>}
-          <button type="submit" className="btn hover:bg-[#465952] hover:text-white hover:shadow-none hover:border-none mt-5 col-span-2">
+          <button type="submit" className="btn hover:bg-[#731702] hover:text-white hover:shadow-none hover:border-none mt-5 col-span-2">
             Rentar
             <svg
               className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
