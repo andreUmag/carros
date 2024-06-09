@@ -14,8 +14,8 @@ const InfoRentaConfirmado = ({
   estado,
 }) => {
   return (
-    <div className="card lg:card-side bg-base-100">
-      <figure className="w-full max-w-sm bg-white  rounded-lg ">
+    <div className="card lg:card-side bg-base-100 -translate-y-5">
+      <figure className="w-full max-w-sm bg-white rounded-lg ">
         <div className="card w-96 bg-base-100 ">
           <figure>
             <img className="p-5 object-cover" src={img} alt="Shoes" />
@@ -26,7 +26,7 @@ const InfoRentaConfirmado = ({
               <div className="badge badge-warning">{estado}</div>
             </h2>
             <p className="mb-2 text-3xl text-left font-bold tracking-tight text-gray-900">
-              ${precio}
+              {precio}
             </p>
           </div>
         </div>
@@ -88,13 +88,13 @@ const InfoRentaConfirmado = ({
         <p className=" text-xl text-left font-bold tracking-tight text-gray-900">
           Datos de la persona
         </p>
-        <div className="justify-start grid text-left -translate-y-10">
+        <div className="justify-start grid text-left ">
           <li>{direccion}</li>
           <li>{telefono}</li>
         </div>
         <Link to="/" className="w-full">
-          <button className="btn hover:bg-[#465952] hover:text-white hover:shadow-none hover:border-none">
-            Inicio
+          <button className="btn hover:bg-[#465952] hover:text-white hover:shadow-none hover:border-none mt-10">
+            Seguir rentando
           </button>
         </Link>
       </div>

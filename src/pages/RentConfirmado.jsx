@@ -1,10 +1,15 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import InfoRentaConfirmado from "../components/InfoRentaConfirmado";
 
 function RentConfirmado() {
   const location = useLocation();
   const {
-    id,
+    nombre,
+    apellido,
+    cedula,
+    direccion,
+    telefono,
     modelo,
     precio,
     imgCarro,
@@ -14,15 +19,15 @@ function RentConfirmado() {
     <>
       <section className="h-screen w-full items-center p-32 flex flex-col">
         <InfoRentaConfirmado
-          apellido="Torres"
-          estado="Rentado"
-          direccion="Calle 35h #11-112"
-          telefono="3113112234"
+          nombre={nombre}
+          apellido={apellido}
+          direccion={direccion}
+          telefono={telefono}
           fechaInicial="13-01-2024"
           fechaFinal="20-01-2024"
-          nombre="Geronimo"
-          precio={precio}
+          estado="Rentado"
           modelo={modelo}
+          precio={precio}
           img={imgCarro}
         />
       </section>
