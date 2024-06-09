@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import InfoCarCompleta from "../components/InfoCarCompleta";
+import InfoCarCompleta from "../components/InfoCarCompletaAndFormulario";
 import { Outlet, Link } from "react-router-dom";
 
 function RentCar() {
