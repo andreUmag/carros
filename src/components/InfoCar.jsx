@@ -49,7 +49,7 @@ const InfoCar = ({
           </div>
           <div className="flex items-center justify-between">
             <span className="text-3xl font-bold text-gray-900 dark:text-white">
-              {precio}
+              ${precio}
             </span>
             <button
               className="btn hover:bg-[#731702] hover:text-white hover:shadow-none hover:border-none"

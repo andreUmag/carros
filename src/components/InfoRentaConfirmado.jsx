@@ -23,10 +23,10 @@ const InfoRentaConfirmado = ({
           <div className="card-body ">
             <h2 className="card-title">
               {modelo}
-              <div className="badge badge-warning">{estado}</div>
+              <div className="badge badge-success p-3">{estado}</div>
             </h2>
             <p className="mb-2 text-3xl text-left font-bold tracking-tight text-gray-900">
-              {precio}
+              ${precio}
             </p>
           </div>
         </div>

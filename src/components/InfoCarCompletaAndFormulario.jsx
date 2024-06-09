@@ -76,7 +76,7 @@ const InfoCarCompleta = ({
           </p>
           <div>
             <h5 className="mb-2 text-3xl text-left font-bold tracking-tight text-gray-900">
-              {precio}
+              ${precio}
             </h5>
           </div>
         </div>
