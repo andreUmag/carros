@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 const InfoCarCompleta = ({
   id,
@@ -11,6 +12,7 @@ const InfoCarCompleta = ({
   velocidad,
   kilometraje,
 }) => {
+  
   const [formData, setFormData] = useState({
     nombre: "",
     apellido: "",
@@ -32,7 +34,7 @@ const InfoCarCompleta = ({
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const { nombre, apellido, cedula, direccion, telefono, fechaInicial, fechaFinal } = formData;
 
@@ -42,22 +44,44 @@ const InfoCarCompleta = ({
     }
 
     setError("");
-    navigate("/Rentado", {
-      state: {
-        ...formData,
-        modelo,
-        precio,
-        imgCarro,
-      },
-    });
+
+    const fechaInicio = new Date(fechaInicial).toISOString();
+    const fechaFin = new Date(fechaFinal).toISOString();
+
+    const data = {
+      nombre,
+      apellido,
+      cedula: parseInt(cedula),
+      direccion,
+      telefono: parseInt(telefono),
+      fechaInicio,
+      fechaFinal: fechaFin,
+      idCarro: id
+    };
+
+    try {
+      const response = await axios.post("http://localhost:8080/api/v1/rented", data);
+      console.log('Success:', response.data);
+      navigate("/Rentado", {
+        state: {
+          ...formData,
+          modelo,
+          precio,
+          imgCarro,
+        },
+      });
+    } catch (error) {
+      console.error('Error:', error);
+      setError("Error al enviar la solicitud");
+    }
   };
 
   return (
     <div className="flex flex-row gap-5">
-      <div className=" bg-white w-96 h-86 ml-36  flex flex-col mt-24 rounded-2xl">
-        <div className="rounded-xl h-64 w-80">
+      <div className="bg-white w-96 h-86 ml-36 flex flex-col mt-24 rounded-2xl">
+        <div className="rounded-xl h-64 translate-x-8 w-80">
           <img
-            className="rounded-t-lg scale-75 translate-y-12 object-cover ml-7"
+            className="rounded-t-lg scale-75 object-cover mt-9"
             src={imgCarro}
             alt=""
           />
@@ -65,15 +89,15 @@ const InfoCarCompleta = ({
         <div className="p-5">
           <div>
             <h5 className="mb-2 text-2xl text-left font-bold tracking-tight text-gray-900 flex gap-2">
-              {modelo}
+              {modelo}{id}
               <div className="flex items-center mt-2.5 mb-5">
-                <span className="bg-[#F23005] text-white text-xs font-semibold px-2.5 py-0.5 rounded ">
+                <span className="bg-[#F23005] text-white text-xs font-semibold px-2.5 py-0.5 rounded">
                   {ubicacion}
                 </span>
               </div>
             </h5>
           </div>
-          <p className="mb-3 font-normal text-left text-gray-700 ">
+          <p className="mb-3 font-normal text-left text-gray-700">
             Este vehículo de la marca {marca} tiene un kilometraje de {kilometraje} Km, alcanza una velocidad máxima de {velocidad} Km/h.
           </p>
           <div>
