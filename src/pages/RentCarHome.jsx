@@ -43,6 +43,7 @@ function RentCarHome() {
         {carros.map((carro) => (
           <InfoCar
             key={carro.id}
+            id={carro.id}
             marca={carro.marca}
             precio={carro.precio}
             ubicacion={carro.locacion}

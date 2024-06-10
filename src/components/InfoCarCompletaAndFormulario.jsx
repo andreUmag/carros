@@ -89,7 +89,7 @@ const InfoCarCompleta = ({
         <div className="p-5">
           <div>
             <h5 className="mb-2 text-2xl text-left font-bold tracking-tight text-gray-900 flex gap-2">
-              {modelo}{id}
+              {modelo}
               <div className="flex items-center mt-2.5 mb-5">
                 <span className="bg-[#F23005] text-white text-xs font-semibold px-2.5 py-0.5 rounded">
                   {ubicacion}
