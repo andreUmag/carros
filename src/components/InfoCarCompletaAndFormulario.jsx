@@ -17,6 +17,8 @@ const InfoCarCompleta = ({
     cedula: "",
     direccion: "",
     telefono: "",
+    fechaInicial: "",
+    fechaFinal: "",
   });
 
   const [error, setError] = useState("");
@@ -32,9 +34,9 @@ const InfoCarCompleta = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { nombre, apellido, cedula, direccion, telefono } = formData;
+    const { nombre, apellido, cedula, direccion, telefono, fechaInicial, fechaFinal } = formData;
 
-    if (!nombre || !apellido || !cedula || !direccion || !telefono) {
+    if (!nombre || !apellido || !cedula || !direccion || !telefono || !fechaInicial || !fechaFinal) {
       setError("Todos los campos son obligatorios");
       return;
     }
@@ -124,6 +126,22 @@ const InfoCarCompleta = ({
             name="telefono"
             placeholder="Telefono"
             value={formData.telefono}
+            onChange={handleChange}
+            className="input input-bordered w-32 md:w-auto"
+          />
+          <input
+            type="date"
+            name="fechaInicial"
+            placeholder="Fecha Inicial"
+            value={formData.fechaInicial}
+            onChange={handleChange}
+            className="input input-bordered w-32 md:w-auto"
+          />
+          <input
+            type="date"
+            name="fechaFinal"
+            placeholder="Fecha Final"
+            value={formData.fechaFinal}
             onChange={handleChange}
             className="input input-bordered w-32 md:w-auto"
           />

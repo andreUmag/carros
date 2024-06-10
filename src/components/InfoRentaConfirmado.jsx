@@ -14,7 +14,7 @@ const InfoRentaConfirmado = ({
   estado,
 }) => {
   return (
-    <div className="card lg:card-side bg-base-100 -translate-y-5">
+    <div className="card lg:card-side bg-base-100 -translate-y-5 h-[480px]">
       <figure className="w-full max-w-sm bg-white rounded-lg ">
         <div className="card w-96 bg-base-100 ">
           <figure>

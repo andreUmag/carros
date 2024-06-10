@@ -13,6 +13,8 @@ function RentConfirmado() {
     modelo,
     precio,
     imgCarro,
+    fechaInicial,
+    fechaFinal,
   } = location.state || {};
 
   return (
@@ -23,8 +25,8 @@ function RentConfirmado() {
           apellido={apellido}
           direccion={direccion}
           telefono={telefono}
-          fechaInicial="13-01-2024"
-          fechaFinal="20-01-2024"
+          fechaInicial={fechaInicial}
+          fechaFinal={fechaFinal}
           estado="Rentado"
           modelo={modelo}
           precio={precio}
