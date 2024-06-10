@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Busqueda from "../components/Busqueda";
 import InfoCar from "../components/InfoCar";
 import { Outlet } from "react-router-dom";
@@ -8,7 +9,20 @@ import "slick-carousel/slick/slick-theme.css";
 
 function RentCarHome() {
   const [carros, setCarros] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/api/v1/cars")
+      .then((response) => {
+        setCarros(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching the car data:", error);
+        setLoading(false);
+      });
+  }, []);
 
   const settings = {
     className: "slider variable-width",
