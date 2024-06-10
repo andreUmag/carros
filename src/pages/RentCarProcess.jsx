@@ -19,7 +19,7 @@ function RentCar() {
   return (
     <>
       <section className="flex flex-row items-center">
-        <section className="w-full h-dvh basis-1/2 p-2  items-center">
+        <section className="w-full h-dvh basis-1/2 p-2 items-center">
           <InfoCarCompleta
             id={id}
             marca={marca}
@@ -39,7 +39,6 @@ function RentCar() {
               </button>
             </Link>
           </div>
-          
         </section>
       </section>
       <Outlet />

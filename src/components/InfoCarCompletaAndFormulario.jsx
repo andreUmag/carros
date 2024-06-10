@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
@@ -12,7 +12,6 @@ const InfoCarCompleta = ({
   velocidad,
   kilometraje,
 }) => {
-  
   const [formData, setFormData] = useState({
     nombre: "",
     apellido: "",
@@ -25,6 +24,7 @@ const InfoCarCompleta = ({
 
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,11 +53,14 @@ const InfoCarCompleta = ({
       apellido,
       cedula: parseInt(cedula),
       direccion,
-      telefono: parseInt(telefono),
+      telefono: parseInt(telefono), 
       fechaInicio,
       fechaFinal: fechaFin,
-      idCarro: id
+      carro: {
+        id: id
+      }
     };
+
 
     try {
       const response = await axios.post("http://localhost:8080/api/v1/rented", data);
@@ -181,9 +184,9 @@ const InfoCarCompleta = ({
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M1 5h12m0 0L9 1m4 4L9 9"
               />
             </svg>

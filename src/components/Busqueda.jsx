@@ -62,7 +62,7 @@ const Busqueda = ({ setCarros, setLoading }) => {
               <option className="bg-[#f2444479]" value="">
                 Ubicacion
               </option>
-              <option value="Bogota">Bogota</option>
+              <option value="Bogota">Cartagena</option>
               <option value="Santa Marta">Santa Marta</option>
               <option value="Barranquilla">Barranquilla</option>
             </select>
