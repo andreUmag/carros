@@ -82,7 +82,7 @@ const InfoCarCompleta = ({
   return (
     <div className="flex flex-row gap-5">
       <div className="bg-white w-96 h-86 ml-36 flex flex-col mt-24 rounded-2xl">
-        <div className="rounded-xl h-64 translate-x-8 w-80">
+        <div className="rounded-xl h-64 translate-x-8 w-80 -translate-y-5">
           <img
             className="rounded-t-lg scale-75 object-cover mt-9"
             src={imgCarro}

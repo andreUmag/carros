@@ -3,7 +3,7 @@ import axios from "axios";
 import { DateIn } from "./DateIn";
 
 const Busqueda = ({ setCarros, setLoading }) => {
-  const [locacion, setLocacion] = useState('');
+  const [locacion, setLocacion] = useState("");
   const [fechaInicial, setFechaInicial] = useState("");
   const [fechaFinal, setFechaFinal] = useState("");
 
@@ -25,7 +25,11 @@ const Busqueda = ({ setCarros, setLoading }) => {
     }
 
     setLoading(true);
-    console.log("Parametros de búsqueda:", { locacion, fechaInicial, fechaFinal });
+    console.log("Parametros de búsqueda:", {
+      locacion,
+      fechaInicial,
+      fechaFinal,
+    });
 
     axios
       .get("http://localhost:8080/api/v1/cars/available", {
@@ -45,10 +49,23 @@ const Busqueda = ({ setCarros, setLoading }) => {
       });
   };
 
+  const text = document.querySelector(".sec-text");
+
+  const textLoad = () => {
+    setTimeout(() => {
+      text.textContent = "Auto Gallery";
+    }, 8000);
+  };
+
+  textLoad();
+
   return (
-    <div className="navbar rounded-lg bg-base-100 bg-transparent p-8 w-full mb-10">
-      <div className="flex-1">
-        <a className="btn btn-ghost text-xl text-white">The Auto Gallery</a>
+    <div className="navbar rounded-lg bg-base-100 bg-transparent p-6 -translate-x-32 w-screen mb-10 backdrop-blur-sm shadow-2xl">
+      <div className="flex-1 flex">
+        <div className="containerText bg-[#1e1e1e] block p-2 rounded-xl shadow-2xl">
+          <span className="text first-text ml-8">The </span>
+          <span className="text sec-text mr-28"></span>
+        </div>
       </div>
       <div className="flex-none gap-2">
         <div className="form-control">

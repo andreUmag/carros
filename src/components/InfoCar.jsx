@@ -29,8 +29,8 @@ const InfoCar = ({
   };
 
   return (
-    <div className="p-[1px]">
-      <div className="w-[300px] max-w-sm mr-5 bg-white  border-gray-200 rounded-2xl  grid justify-center">
+    <div className="p-[1px] mt-10">
+      <div className="w-[300px] max-w-sm mr-5 bg-white  border-gray-200 rounded-2xl  grid justify-center shadow-2xl">
         <div className="h-60 w-80 rounded-xl">
           <img
             className="p-8 object-cover"

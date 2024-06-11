@@ -2,3 +2,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.containerText{
+    overflow: hidden;
+}
+
+.containerText .text{
+    position: relative;
+    color: #F23005;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.text.first-text{
+    color: white;
+}
+
+.text.sec-text:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #1e1e1e;
+    border-left: 2px solid #F23005;
+    animation: animate 4s steps(12) infinite;
+}
+
+@keyframes animate {
+    40%, 60%{
+        left: calc(100% + 4px);
+    }
+    100%{
+        left: 0%;
+    }
+}
