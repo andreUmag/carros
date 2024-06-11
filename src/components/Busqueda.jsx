@@ -54,7 +54,7 @@ const Busqueda = ({ setCarros, setLoading }) => {
   const textLoad = () => {
     setTimeout(() => {
       text.textContent = "Auto Gallery";
-    }, 8000);
+    }, 0);
   };
 
   textLoad();
